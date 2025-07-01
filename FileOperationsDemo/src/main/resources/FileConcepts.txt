@@ -1,0 +1,13 @@
+There are a number of Resource implementations inbuilt in Spring such as
+
+ClassPathResource: loads a resource from the classpath. We can specify the path to the resource relative to the root of the classpath. It supports resolution as java.io.File if the class path resource resides in the filesystem but not for resources in a JAR. It recognizes the special prefix 'classpath:'on the string path.
+UrlResource: Loads a resource from a URL. We can specify the URL of the resource with prefix 'http:' or ‘file:‘ if it is a file protocol.
+FileSystemResource: Loads a resource from the file system. We can specify the absolute path to the resource on the file system with prefix 'file:'.
+ServletContextResource: Loads a resource from the ServletContext. We can specify the path to the resource relative to the ServletContext. It does not use any prefixes.
+
+//Read resource
+
+Resource classPathResource = resourceLoader.getResource("classpath:file.txt");
+Resource urlResource = resourceLoader.getResource("http://example.com/file.txt");
+Resource fileSystemResource = resourceLoader.getResource("file:/path/to/file.txt");
+Resource servletContextResource = resourceLoader.getResource("/WEB-INF/file.txt");
