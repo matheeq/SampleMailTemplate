@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to DEFTeam</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style type="text/css" media="screen">
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: normal;
+            height: auto;
+            color: #000000 !important;
+            background-color: #ffffff !important;
+        }
+
+        /****font-sizes*****/
+        .dt_Header12 {
+            font-size: 12px;
+        }
+
+        .dt_Header10 {
+            font-size: 10px;
+        }
+
+        /****border*****/
+        .dt_brdr-1 {
+            border: 1px solid #255DA1;
+            border-top: none;
+            box-sizing: border-box;
+        }
+
+        .dt_brdrt-1 {
+            border-top: 1px solid #255DA1;
+        }
+
+        /****padding*****/
+        .pt-1 {
+            padding-top: 4px;
+        }
+
+        .pt-3 {
+            padding-top: 15px;
+        }
+
+        .pb-3 {
+            padding-bottom: 15px;
+        }
+        .py-2 {
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        .py-3 {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        .px-2 {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .px-3 {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .px-4 {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .px-5 {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        .mb-0{
+        margin-bottom:0px
+        }
+        .my-0{
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+.container{
+    min-width: 500px;
+}
+        /****width*****/
+        .dt_width500 {
+            width: 500px;
+            
+        }
+
+        /****table *****/
+        table.dt_width500 {
+            table-layout: fixed;
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        table.dt_width500 td {
+            padding: 8px 0px;
+            vertical-align: top;
+        }
+
+        table.dt_width500 td:nth-child(1) {
+            width: 30% !important;
+            font-weight: 500;
+            color: #333;
+        }
+
+        table.dt_width500 td:nth-child(3) {
+            width: 65% !important;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            white-space: normal;
+        }
+
+        table.dt_width500 td:nth-child(2) {
+            width: 5% !important;
+            text-align: center;
+            padding: 8px 10px;
+        }
+
+        .textWrap {
+            width: 100%;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            white-space: normal;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .dt_Logo {
+            padding-top: 10px;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .dt_Link {
+            border: none;
+            text-decoration: none !important;
+            outline: none !important;
+            color: #255DA1;
+            font-weight: 500;
+        }
+
+        .dt_Link:hover {
+            cursor: pointer;
+            color: #255DA1;
+        }
+
+        .dt_Link:focus {
+            box-shadow: none;
+        }
+
+        .footer {
+            height: 6px;
+            background-color: #255DA1;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: -6px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="dt_brdr-1 dt_width500">
+        <img src="${url}/Sass/images/backgrounds/dt_Emailstrip.svg" alt="dt_Emailstrip">
+        <div class="dt_Logo">
+            <img src="${url}/Sass/images/logos/dt_emailTemp-logo.svg" class="fluid-img logo"
+                alt="defteam Logo" />
+        </div>
+        <div class="px-4 ">
+            <p>Dear ${name},</p>
+            <p class="textWrap"> ${text}</p>
+            <table class="dt_width500">
+                <tbody>
+                <#if userName??>
+                    <tr>
+                        <td style="width: 30%;"><b>Name</b></td>
+                        <td style="width: 5%;">:</td>
+                        <td> ${userName}
+                        </td>
+                    </tr>
+                 </#if>
+                 <#if phoneNo??>
+                    <tr>
+                        <td style="width: 25%;"><b>Phone</b></td>
+                        <td style="width: 5%;">:</td>
+                        <td>${phoneNo}</td>
+                    </tr>
+                  </#if>
+                 <#if email??>
+                    <tr>
+                        <td style="width: 25%;"><b>Email</b></td>
+                        <td style="width: 5%;">:</td>
+                        <td>${email}</td>
+                    </tr>
+                  </#if>
+                   <#if subject??>
+                    <tr>
+                        <td style="width: 25%;"><b>Subject</b></td>
+                        <td style="width: 5%;">:</td>
+                        <td class="textWrap">
+                            ${subject}
+                        </td>
+                    </tr>
+                    </#if>
+                      <#if message??>
+                    <tr>
+                        <td style="width: 25%;"><b>Message</b></td>
+                        <td style="width: 5%;">:</td>
+                        <td class="textWrap">
+                            ${message}
+                        </td>
+                    </tr>
+                    </#if>  
+                    <#if company??>
+                    <tr>
+                        <td style="width: 25%;"><b>Company</b></td>
+                        <td style="width: 5%;">:</td>
+                        <td class="textWrap">
+                            ${company}
+                        </td>
+                    </tr>
+                    </#if>
+                    <#if demoRequirement??>
+                    <tr>
+                        <td style="width: 35%;"><b>Demo Requirement</b></td>
+                        <td style="width: 5%;">:</td>
+                        <td class="textWrap">
+                            ${demoRequirement}
+                        </td>
+                    </tr>
+                    </#if>
+                    
+                    <#if jobTitle??>
+                    <tr>
+                        <td style="width: 25%;"><b>Job Title</b></td>
+                        <td style="width: 5%;">:</td>
+                        <td class="textWrap">
+                            ${jobTitle}
+                        </td>
+                    </tr>
+                    </#if>
+                    <#if country??>
+                    <tr>
+                        <td style="width: 25%;"><b>Country</b></td>
+                        <td style="width: 5%;">:</td>
+                        <td class="textWrap">
+                            ${country}
+                        </td>
+                    </tr>
+                    </#if>
+                        <#if mailfrequency??>
+                    <tr>
+                        <td style="width: 25%;"><b>Preference</b></td>
+                        <td style="width: 5%;">:</td>
+                        <td class="textWrap">
+                            ${mailfrequency}
+                        </td>
+                    </tr>
+                    </#if>
+                    
+                    <#if pageName??>
+                    <tr>
+                        <td style="width: 25%;"><b>Page Name</b></td>
+                        <td style="width: 5%;">:</td>
+                        <td class="textWrap">
+                            ${pageName}
+                        </td>
+                    </tr>
+                    </#if>
+                    <#if descriptionOfQuery??>
+                    <tr>
+                        <td style="width: 25%;"><b>Query</b></td>
+                        <td style="width: 5%;">:</td>
+                        <td class="textWrap">
+                            ${descriptionOfQuery}
+                        </td>
+                    </tr>
+                    </#if>
+	                   <#if ipAddress??>
+                    <tr>
+                        <td style="width: 25%;"><b>IP Address</b></td>
+                        <td style="width: 5%;">:</td>
+                        <td class="textWrap">
+                            ${ipAddress}
+                        </td>
+                    </tr>
+                    </#if> 
+                </tbody>
+            </table>
+            <p class="mb-0">Regards,</p>
+            <p class="pb-3 my-0"><b>Team</b></p>
+            <div class="dt_brdrt-1 text-center dt_Header10 px-2 py-2">
+               USA: One Stamford Plaza, 263 Tresser Blvd. 9th Floor, Stamford, CT 06901
+                <p class="my-0"><a class="dt_Link" href="Tel: +1-203-653-2293"><span style="color:#000000">Tel:</span> +1-203-653-2293, </a>Email: <a
+                        class="dt_Link" href="mailto:salesteam@gmail.com">salesteam@gmail.com</a></p>
+                <div>
+				<#if userEmail??>
+                    <a href="${url}/un-subscribe.html?email=${userEmail}" target="_blank" style="color:#D22529;"><span
+                            style="color:#D22529;">Unsubscribe</span></a> |
+							<#else>
+							<a href="${url}/un-subscribe.html" target="_blank" style="color:#D22529;"><span
+                            style="color:#D22529;">Unsubscribe</span></a> |
+                   </#if>	
+				   
+                    <a href="${url}/terms-of-use.html" target="_blank" style="color:#D22529;">Terms
+                        of Use</span></a> |
+                     <a href="${url}/privacy-policy.html" target="_blank" style="color:#D22529;"><span
+                            style="color:#D22529;">Privacy
+                            Policy</span></a> 
+                     <p class="pt-1 my-0"><b>Note:</b> This is an auto generated email, please do not respond to this email.</p>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="footer"></div>
+    </div>
+    <div class="dt_width500 text-center pt-1">
+        <p class="dt_Header10 my-0"> Copyright © 2002 - 2025 <a href="${url}" target="_blank" style="color:#000000">DEFTeam Solutions & its affiliates</a></p>
+    </div>
+    </div>
+</body>
+
+</html>
